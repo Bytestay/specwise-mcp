@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.4](https://github.com/Bytestay/specwise-mcp/compare/bytestay-specwise-mcp-v0.2.3...bytestay-specwise-mcp-v0.2.4) (2026-11-06)
+
+
+### Bug Fixes
+
+* use the io.github.Bytestay namespace the MCP registry grants (case-sensitive) ([#1](https://github.com/Bytestay/specwise-mcp/issues/1)) ([deca3d1](https://github.com/Bytestay/specwise-mcp/commit/deca3d1a84c64b5b159077bf0194cbd7ce04ab17))
+
 ## [0.2.3](https://github.com/hybridforgelab/specwise-mcp/compare/hybridforgelab-specwise-mcp-v0.2.2...hybridforgelab-specwise-mcp-v0.2.3) (2026-11-05)
 
 
