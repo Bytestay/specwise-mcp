@@ -1,6 +1,6 @@
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
-  "name": "io.github.bytestay/specwise-mcp",
+  "name": "io.github.Bytestay/specwise-mcp",
   "description": "OpenAPI and JSON Schema validation and OpenAPI breaking-change diffs for AI agents.",
   "repository": {
     "url": "https://github.com/bytestay/specwise-mcp",
