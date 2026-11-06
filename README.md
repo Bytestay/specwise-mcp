@@ -59,7 +59,7 @@ Without a key the server still starts. The first tool call then explains where t
 
 Also listed on Glama:
 
-[![specwise-mcp on Glama](https://glama.ai/mcp/servers/hybridforgelab/specwise-mcp/badge)](https://glama.ai/mcp/servers/hybridforgelab/specwise-mcp)
+[![specwise-mcp on Glama](https://glama.ai/mcp/servers/Bytestay/specwise-mcp/badge)](https://glama.ai/mcp/servers/Bytestay/specwise-mcp)
 
 ## 3. Tools
 
