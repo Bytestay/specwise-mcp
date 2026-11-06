@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.5](https://github.com/Bytestay/specwise-mcp/compare/bytestay-specwise-mcp-v0.2.4...bytestay-specwise-mcp-v0.2.5) (2026-11-06)
+
+
+### Documentation
+
+* Glama badge points to the Bytestay listing ([#4](https://github.com/Bytestay/specwise-mcp/issues/4)) ([c78e549](https://github.com/Bytestay/specwise-mcp/commit/c78e549c3b9031d5972e1082c8d05a9e49161244))
+
 ## [0.2.4](https://github.com/Bytestay/specwise-mcp/compare/bytestay-specwise-mcp-v0.2.3...bytestay-specwise-mcp-v0.2.4) (2026-11-06)
 
 
