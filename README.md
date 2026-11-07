@@ -7,6 +7,8 @@
 [![PyPI](https://img.shields.io/pypi/v/bytestay-specwise-mcp)](https://pypi.org/project/bytestay-specwise-mcp/)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-blue)](https://pypi.org/project/bytestay-specwise-mcp/)
 [![License: MIT](https://img.shields.io/github/license/bytestay/specwise-mcp)](LICENSE)
+[![MCP Registry](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fregistry.modelcontextprotocol.io%2Fv0%2Fservers%3Fsearch%3Dio.github.Bytestay%2Fspecwise-mcp&query=%24.servers%5B0%5D.server.version&label=MCP%20Registry&color=blue)](https://registry.modelcontextprotocol.io/v0/servers?search=io.github.Bytestay/specwise-mcp)
+[![Glama](https://glama.ai/mcp/servers/Bytestay/specwise-mcp/badges/score.svg)](https://glama.ai/mcp/servers/Bytestay/specwise-mcp)
 
 Let your coding agent check an API contract: validate an OpenAPI document, find the breaking changes between two versions (also against git), and validate JSON Schemas and data.
 
