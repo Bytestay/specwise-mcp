@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.6](https://github.com/Bytestay/specwise-mcp/compare/bytestay-specwise-mcp-v0.2.5...bytestay-specwise-mcp-v0.2.6) (2026-11-08)
+
+
+### Documentation
+
+* MCP Registry badge shows the latest version ([#7](https://github.com/Bytestay/specwise-mcp/issues/7)) ([349faaf](https://github.com/Bytestay/specwise-mcp/commit/349faaff997df2741b983a42045fb9d835ef2f2a))
+
 ## [0.2.5](https://github.com/Bytestay/specwise-mcp/compare/bytestay-specwise-mcp-v0.2.4...bytestay-specwise-mcp-v0.2.5) (2026-11-07)
 
 
