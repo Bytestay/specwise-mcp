@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.8](https://github.com/Bytestay/specwise-mcp/compare/bytestay-specwise-mcp-v0.2.7...bytestay-specwise-mcp-v0.2.8) (2026-11-09)
+
+
+### Bug Fixes
+
+* read BYTESTAY_* settings, keep HFL_* as a fallback ([#12](https://github.com/Bytestay/specwise-mcp/issues/12)) ([10154d5](https://github.com/Bytestay/specwise-mcp/commit/10154d5d0ad0a38b378c7926adae559b6c1f4011))
+
 ## [0.2.7](https://github.com/Bytestay/specwise-mcp/compare/bytestay-specwise-mcp-v0.2.6...bytestay-specwise-mcp-v0.2.7) (2026-11-09)
 
 
