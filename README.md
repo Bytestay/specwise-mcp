@@ -2,7 +2,7 @@
 
 <!-- mcp-name: io.github.Bytestay/specwise-mcp -->
 
-[![M8ven Score](https://m8ven.ai/badge/mcp/hybridforgelab/specwise-mcp?variant=verified)](https://m8ven.ai/mcp/hybridforgelab/specwise-mcp?s=readme)
+[![M8ven Score](https://m8ven.ai/badge/mcp/bytestay/specwise-mcp?variant=verified)](https://m8ven.ai/mcp/bytestay/specwise-mcp?s=readme)
 [![CI](https://github.com/bytestay/specwise-mcp/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/bytestay/specwise-mcp/actions/workflows/ci.yml)
 [![PyPI](https://img.shields.io/pypi/v/bytestay-specwise-mcp)](https://pypi.org/project/bytestay-specwise-mcp/)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-blue)](https://pypi.org/project/bytestay-specwise-mcp/)
