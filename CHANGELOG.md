@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.2.7](https://github.com/Bytestay/specwise-mcp/compare/bytestay-specwise-mcp-v0.2.6...bytestay-specwise-mcp-v0.2.7) (2026-11-09)
+
+
+### Documentation
+
+* add the mcprush badge ([#11](https://github.com/Bytestay/specwise-mcp/issues/11)) ([ca20791](https://github.com/Bytestay/specwise-mcp/commit/ca20791681f3d7e8db238ae42a66b7aafcb83573))
+* M8ven badge points to the bytestay listing ([#9](https://github.com/Bytestay/specwise-mcp/issues/9)) ([a17ee14](https://github.com/Bytestay/specwise-mcp/commit/a17ee148fc77add66913142bd2df0b40c9cac218))
+
 ## [0.2.6](https://github.com/Bytestay/specwise-mcp/compare/bytestay-specwise-mcp-v0.2.5...bytestay-specwise-mcp-v0.2.6) (2026-11-08)
 
 
