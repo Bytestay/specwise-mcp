@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.2.9](https://github.com/Bytestay/specwise-mcp/compare/bytestay-specwise-mcp-v0.2.8...bytestay-specwise-mcp-v0.2.9) (2026-11-12)
+
+
+### Documentation
+
+* note that the repository was formerly Hybrid Forge Lab ([#16](https://github.com/Bytestay/specwise-mcp/issues/16)) ([bb05947](https://github.com/Bytestay/specwise-mcp/commit/bb05947e62026b91d7e2c3eaede989550e44deb2))
+* use the mcprush card badge ([#14](https://github.com/Bytestay/specwise-mcp/issues/14)) ([31512cb](https://github.com/Bytestay/specwise-mcp/commit/31512cb551091d7076c9989cb0f9492d27d9224c))
+
 ## [0.2.8](https://github.com/Bytestay/specwise-mcp/compare/bytestay-specwise-mcp-v0.2.7...bytestay-specwise-mcp-v0.2.8) (2026-11-09)
 
 
