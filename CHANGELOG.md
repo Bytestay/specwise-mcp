@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.10](https://github.com/Bytestay/specwise-mcp/compare/bytestay-specwise-mcp-v0.2.9...bytestay-specwise-mcp-v0.2.10) (2026-11-23)
+
+
+### Bug Fixes
+
+* scope local file paths and validate git refs ([#19](https://github.com/Bytestay/specwise-mcp/issues/19)) ([3285c26](https://github.com/Bytestay/specwise-mcp/commit/3285c26f573df121b6a2f8f8f8a3b9087dc6c1ac))
+
 ## [0.2.9](https://github.com/Bytestay/specwise-mcp/compare/bytestay-specwise-mcp-v0.2.8...bytestay-specwise-mcp-v0.2.9) (2026-11-12)
 
 
