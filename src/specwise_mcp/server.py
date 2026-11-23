@@ -21,7 +21,7 @@ server = MCPServer(
         "Validate an OpenAPI (3.x or Swagger 2.0) document and get every error with its JSON Pointer, line and "
         "column. Compare two OpenAPI 3.x versions and get each change classified as breaking, warning, "
         "non-breaking or info, with a semver suggestion; use it after editing a spec, against the git version. "
-        "Validate JSON Schemas and data. Documents are processed in memory and not stored, and external $refs are "
+        "Validate JSON Schemas and data. Documents, including local files given as a path, are uploaded to the Specwise API, processed in memory and not stored, and external $refs are "
         "never fetched. Each call is one request on the user's Specwise plan."
     ),
     website_url="https://specwise.bytestay.pt",
@@ -45,7 +45,7 @@ def _one(value: Doc | None, path: str | None, what: str) -> Doc:
 @server.tool(annotations=READ_ONLY)
 async def validate_openapi(
     spec: Annotated[Doc | None, Field(description="The document as YAML or JSON text (or a JSON object).")] = None,
-    spec_path: Annotated[str | None, Field(description="A local file instead of `spec`.")] = None,
+    spec_path: Annotated[str | None, Field(description="A local file instead of `spec`. Uploaded to the Specwise API; only *.yaml, *.yml or *.json inside the working directory (or SPECWISE_MCP_ROOT) are read.")] = None,
 ) -> dict:
     """Validate an OpenAPI 3.0/3.1/3.2 or Swagger 2.0 document. Returns every error (not just the first) with its
     JSON Pointer, line and column, plus lint warnings."""
@@ -55,11 +55,11 @@ async def validate_openapi(
 @server.tool(annotations=READ_ONLY)
 async def diff_openapi(
     base: Annotated[Doc | None, Field(description="The old version, as YAML or JSON text (or a JSON object).")] = None,
-    base_path: Annotated[str | None, Field(description="The old version as a local file.")] = None,
+    base_path: Annotated[str | None, Field(description="The old version as a local file. Uploaded to the Specwise API; only *.yaml, *.yml or *.json inside the working directory (or SPECWISE_MCP_ROOT) are read.")] = None,
     revision: Annotated[Doc | None, Field(description="The new version, as YAML or JSON text (or a JSON object).")] = None,
-    revision_path: Annotated[str | None, Field(description="The new version as a local file.")] = None,
+    revision_path: Annotated[str | None, Field(description="The new version as a local file. Uploaded to the Specwise API; only *.yaml, *.yml or *.json inside the working directory (or SPECWISE_MCP_ROOT) are read.")] = None,
     base_git_ref: Annotated[str | None, Field(
-        description="Use revision_path as it is at this git ref (e.g. main, HEAD) as the base.")] = None,
+        description="Use revision_path as it is at this git ref (e.g. main, HEAD) as the base. A branch, tag or commit; the file is read with `git show` and uploaded to the Specwise API.")] = None,
 ) -> dict:
     """Compare two OpenAPI 3.x documents. Each change is breaking, warning, non-breaking or info; `breaking` says
     whether any is breaking, and `semver` suggests the version bump.
@@ -80,9 +80,9 @@ async def diff_openapi(
 @server.tool(annotations=READ_ONLY)
 async def validate_json_schema(
     schema: Annotated[Doc | None, Field(description="The JSON Schema, as JSON or YAML text (or a JSON object).")] = None,
-    schema_path: Annotated[str | None, Field(description="A local file instead of `schema`.")] = None,
+    schema_path: Annotated[str | None, Field(description="A local file instead of `schema`. Uploaded to the Specwise API; only *.yaml, *.yml or *.json inside the working directory (or SPECWISE_MCP_ROOT) are read.")] = None,
     instance: Annotated[Any, Field(description="Data to validate: JSON or YAML text, or the value itself. Optional.")] = None,
-    instance_path: Annotated[str | None, Field(description="Data to validate, from a local file.")] = None,
+    instance_path: Annotated[str | None, Field(description="Data to validate, from a local file. Uploaded to the Specwise API; only *.yaml, *.yml or *.json inside the working directory (or SPECWISE_MCP_ROOT) are read.")] = None,
     draft: Annotated[Literal["4", "6", "7", "2019-09", "2020-12"] | None,
                      Field(description="Force a draft; by default from $schema, else 2020-12.")] = None,
 ) -> dict:
