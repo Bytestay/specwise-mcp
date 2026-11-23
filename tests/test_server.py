@@ -96,11 +96,64 @@ async def test_json_arguments_through_the_server(api):
 async def test_text_file_limits(tmp_path):
     with pytest.raises(ToolError, match="No such file"):
         files.read_text(str(tmp_path / "missing"), 100)
-    big = tmp_path / "big"
+    big = tmp_path / "big.json"
     big.write_text("x" * 50)
     with pytest.raises(ToolError, match="limit is"):
         files.read_text(str(big), 10)
-    binary = tmp_path / "bin"
+    binary = tmp_path / "bin.json"
     binary.write_bytes(b"\xff\xfe\x00")
     with pytest.raises(ToolError, match="not UTF-8"):
         files.read_text(str(binary), 100)
+
+
+def _tree(tmp_path):
+    root = tmp_path / "root"
+    root.mkdir()
+    (tmp_path / "secret.yaml").write_text("secret: 1\n")
+    return root
+
+
+@pytest.mark.parametrize("path", ["../secret.yaml", "{abs}"])
+async def test_path_outside_root_is_refused(api, tmp_path, monkeypatch, path):
+    root = _tree(tmp_path)
+    monkeypatch.chdir(root)
+    with pytest.raises(ToolError, match="outside the allowed folder"):
+        await specwise.validate_openapi(spec_path=path.format(abs=tmp_path / "secret.yaml"))
+    assert not api.requests
+
+
+async def test_symlink_escape_is_refused(api, tmp_path, monkeypatch):
+    root = _tree(tmp_path)
+    (root / "spec.yaml").symlink_to(tmp_path / "secret.yaml")
+    monkeypatch.chdir(root)
+    with pytest.raises(ToolError, match="outside the allowed folder"):
+        await specwise.validate_openapi(spec_path="spec.yaml")
+    assert not api.requests
+
+
+async def test_wrong_extension_is_refused(api, tmp_path):
+    (tmp_path / "id_rsa").write_text("x")
+    with pytest.raises(ToolError, match="not an allowed file type"):
+        await specwise.validate_openapi(spec_path="id_rsa")
+    assert not api.requests
+
+
+async def test_explicit_root_env(api, tmp_path, monkeypatch):
+    other = tmp_path / "other"
+    other.mkdir()
+    (other / "s.yml").write_text(SPEC_V1)
+    monkeypatch.setenv("SPECWISE_MCP_ROOT", str(other))
+    await specwise.validate_openapi(spec_path="s.yml")
+    assert api.last_json() == {"spec": SPEC_V1}
+
+
+@pytest.mark.parametrize("ref", ["--output=x", "-p", "a b", "a..b", "x;rm", "a:b"])
+async def test_git_ref_allowlist(api, tmp_path, ref):
+    repo = tmp_path / "repo"
+    repo.mkdir()
+    git(repo, "init", "-q", "-b", "main")
+    spec = repo / "openapi.yaml"
+    spec.write_text(SPEC_V1)
+    with pytest.raises(ToolError, match="not a valid git ref"):
+        await specwise.diff_openapi(revision_path=str(spec), base_git_ref=ref)
+    assert not (repo / "x").exists() and not api.requests
